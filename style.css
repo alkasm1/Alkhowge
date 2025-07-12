@@ -7,14 +7,14 @@ body {
 
 header {
   text-align: center;
-  padding: 60px 20px 30px;
+  padding: 30px 20px;
 }
 
-.logo {
-  font-size: 48px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 6px #666;
+.logo-image {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(2px 2px 6px #666);
 }
 
 nav a {
@@ -59,6 +59,32 @@ nav a {
   }
 }
 
+/* عرض الصور المتحرك */
+.slider-section {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.slider-container {
+  display: flex;
+  width: 300%;
+  animation: slideShow 12s infinite ease-in-out;
+}
+
+.slide-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes slideShow {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+
+/* المنتجات */
 .product-grid {
   display: flex;
   justify-content: center;
@@ -90,6 +116,7 @@ nav a {
   font-weight: bold;
 }
 
+/* زر واتساب */
 .whatsapp {
   position: fixed;
   bottom: 20px;
