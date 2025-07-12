@@ -1,82 +1,88 @@
 body {
   margin: 0;
-  background-color: #000;
   font-family: 'Cairo', sans-serif;
+  background-color: #000;
   color: #fff;
+  position: relative;
 }
 
+/* خلفية نبض خفيف */
+.background-pulse {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#00ffcc 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+  animation: pulseBG 40s linear infinite;
+}
+@keyframes pulseBG {
+  0% { background-position: 0 0; }
+  100% { background-position: 400px 400px; }
+}
+
+/* تأثير الكتابة الآلية */
+.typing-banner {
+  background-color: #111;
+  text-align: center;
+  padding: 25px 10px;
+}
+.typing-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00ffcc;
+  width: 0;
+  margin: 0 auto;
+  font-size: 22px;
+  animation: typeEffect 4s steps(60) forwards;
+}
+@keyframes typeEffect {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* الشعار */
 header {
   text-align: center;
   padding: 30px 20px;
 }
-
 .logo-image {
-  width: 180px;
-  height: auto;
-  margin-bottom: 20px;
+  width: 160px;
   filter: drop-shadow(2px 2px 6px #666);
+  margin-bottom: 10px;
 }
 
+/* قائمة التنقل */
 nav a {
   color: #00ffcc;
   text-decoration: none;
   margin: 0 15px;
   font-size: 18px;
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  background-color: rgba(0,255,204,0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
-.section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.section ul li {
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-.welcome-banner {
-  background-color: #111;
-  color: #00ffcc;
-  text-align: center;
-  padding: 15px;
-  font-size: 20px;
-  animation: fadeInSlide 4s ease-in-out;
-}
-
-@keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* عرض الصور المتحرك */
+/* عرض السلايدر */
 .slider-section {
   width: 100%;
   overflow: hidden;
-  margin-top: 40px;
+  margin-top: 30px;
 }
-
 .slider-container {
   display: flex;
   width: 300%;
   animation: slideShow 12s infinite ease-in-out;
 }
-
 .slide-image {
-  width: 100%;
+  width: 100vw;
+  height: 50vh;
   object-fit: cover;
 }
-
 @keyframes slideShow {
   0%   { transform: translateX(0%); }
   33%  { transform: translateX(-100%); }
@@ -84,14 +90,27 @@ nav a {
   100% { transform: translateX(0%); }
 }
 
-/* المنتجات */
+/* الأقسام */
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+.section ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* منتجات */
 .product-grid {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
-
 .product {
   background-color: #111;
   border-radius: 8px;
@@ -99,16 +118,13 @@ nav a {
   padding: 15px;
   box-shadow: 0 0 10px #222;
 }
-
 .product img {
   width: 100%;
   border-radius: 5px;
 }
-
 .product h3 {
   margin: 10px 0 5px;
 }
-
 .price {
   display: block;
   margin-top: 10px;
@@ -116,7 +132,7 @@ nav a {
   font-weight: bold;
 }
 
-/* زر واتساب */
+/* واتساب */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -132,15 +148,15 @@ nav a {
   font-size: 30px;
   box-shadow: 0 0 10px #25D366;
   z-index: 999;
+  transition: transform 0.3s ease;
 }
-
 .whatsapp:hover {
   background-color: #1da851;
+  transform: scale(1.05);
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: #aaa;
-}
+/* تأثيرات دخول العناصر */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn
