@@ -6,15 +6,19 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="القهوجي – متجر إلكتروني احترافي لبيع الأجهزة التقنية والبرمجيات الأصلية بأسعار ممتازة.">
 </head>
 <body>
 
-  <!-- رسالة ترحيبية متحركة -->
-  <div class="welcome-banner">
-    مرحباً بك في متجر القهوجي 💻🖨️ أفضل الأجهزة وأحدث البرامج بانتظارك!
+  <!-- خلفية نبض خفيف -->
+  <div class="background-pulse"></div>
+
+  <!-- رسالة ترحيب آلية الكتابة -->
+  <div class="typing-banner">
+    <h1 class="typing-text">مرحبًا بك في متجر القهوجي – التقنية تبدأ من هنا 💻📡</h1>
   </div>
 
-  <!-- شعار القهوجي -->
+  <!-- شعار وصورة -->
   <header>
     <img src="images/logo.png" alt="شعار القهوجي" class="logo-image">
     <nav>
@@ -26,7 +30,7 @@
   </header>
 
   <!-- عرض الصور المتحرك -->
-  <section id="slider" class="slider-section">
+  <section id="slider" class="slider-section fade-in">
     <div class="slider-container">
       <img class="slide-image" src="images/slide1.jpg" alt="عرض 1">
       <img class="slide-image" src="images/slide2.jpg" alt="عرض 2">
@@ -34,13 +38,13 @@
     </div>
   </section>
 
-  <!-- الأقسام -->
-  <section id="about" class="section">
+  <!-- المحتوى -->
+  <section id="about" class="section fade-in">
     <h2>من نحن</h2>
     <p>القهوجي – وجهتك الذكية لبيع أجهزة اللابتوب، الراوترات، الطابعات، ومستلزماتها، بالإضافة إلى البرامج والسوفت وير.</p>
   </section>
 
-  <section id="services" class="section">
+  <section id="services" class="section fade-in">
     <h2>الخدمات</h2>
     <ul>
       <li>بيع لابتوبات جديدة ومستعملة</li>
@@ -51,7 +55,7 @@
     </ul>
   </section>
 
-  <section id="products" class="section">
+  <section id="products" class="section fade-in">
     <h2>المنتجات المتوفرة</h2>
     <div class="product-grid">
       <div class="product">
@@ -69,7 +73,7 @@
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section fade-in">
     <h2>تواصل معنا</h2>
     <p>📞 <strong>00963957939599</strong> | 📧 <strong>info@alqahwaji.tech</strong></p>
     <p>📍 سوريا - شارع التقنية، بجانب مركز الاتصالات</p>
