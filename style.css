@@ -6,7 +6,7 @@ body {
   position: relative;
 }
 
-/* خلفية نبض خفيف */
+/* خلفية نبض */
 .background-pulse {
   position: fixed;
   width: 100%;
@@ -21,7 +21,7 @@ body {
   100% { background-position: 400px 400px; }
 }
 
-/* تأثير الكتابة الآلية */
+/* الكتابة الآلية */
 .typing-banner {
   background-color: #111;
   text-align: center;
@@ -52,7 +52,7 @@ header {
   margin-bottom: 10px;
 }
 
-/* قائمة التنقل */
+/* التنقل */
 nav a {
   color: #00ffcc;
   text-decoration: none;
@@ -67,7 +67,7 @@ nav a:hover {
   padding: 5px 10px;
 }
 
-/* عرض السلايدر */
+/* السلايدر */
 .slider-section {
   width: 100%;
   overflow: hidden;
@@ -104,7 +104,7 @@ nav a:hover {
   font-size: 16px;
 }
 
-/* منتجات */
+/* المنتجات */
 .product-grid {
   display: flex;
   justify-content: center;
@@ -159,7 +159,22 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* تأثيرات دخول العناصر */
+/* تأثيرات الظهور */
 .fade-in {
   opacity: 0;
-  transform: translate
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* توقيت الظهور */
+#slider.fade-in { animation-delay: 0.5s; }
+#about.fade-in { animation-delay: 1s; }
+#services.fade-in { animation-delay: 1.5s; }
+#products.fade-in { animation-delay: 2s; }
+#contact.fade-in { animation-delay: 2
