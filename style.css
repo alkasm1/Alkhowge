@@ -6,7 +6,6 @@ body {
   position: relative;
 }
 
-/* خلفية نبض */
 .background-pulse {
   position: fixed;
   width: 100%;
@@ -21,7 +20,6 @@ body {
   100% { background-position: 400px 400px; }
 }
 
-/* الكتابة الآلية */
 .typing-banner {
   background-color: #111;
   text-align: center;
@@ -41,7 +39,6 @@ body {
   to { width: 100%; }
 }
 
-/* الشعار */
 header {
   text-align: center;
   padding: 30px 20px;
@@ -52,7 +49,6 @@ header {
   margin-bottom: 10px;
 }
 
-/* التنقل */
 nav a {
   color: #00ffcc;
   text-decoration: none;
@@ -67,30 +63,22 @@ nav a:hover {
   padding: 5px 10px;
 }
 
-/* السلايدر */
-.slider-section {
+.banner-section {
   width: 100%;
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: 20px;
 }
-.slider-container {
-  display: flex;
-  width: 300%;
-  animation: slideShow 12s infinite ease-in-out;
-}
-.slide-image {
-  width: 100vw;
+.banner-image {
+  width: 100%;
   height: 50vh;
   object-fit: cover;
+  animation: fadeInBanner 2s ease-out forwards;
 }
-@keyframes slideShow {
-  0%   { transform: translateX(0%); }
-  33%  { transform: translateX(-100%); }
-  66%  { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
+@keyframes fadeInBanner {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-/* الأقسام */
 .section {
   padding: 40px 20px;
   text-align: center;
@@ -104,39 +92,22 @@ nav a:hover {
   font-size: 16px;
 }
 
-/* المنتجات */
 .product-grid {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
-.product {
-  background-color: #111;
-  border-radius: 8px;
+.product-img {
   width: 250px;
-  padding: 15px;
+  border-radius: 8px;
   box-shadow: 0 0 10px #222;
   transition: transform 0.3s ease;
 }
-.product:hover {
+.product-img:hover {
   transform: scale(1.05);
 }
-.product img {
-  width: 100%;
-  border-radius: 5px;
-}
-.product h3 {
-  margin: 10px 0 5px;
-}
-.price {
-  display: block;
-  margin-top: 10px;
-  color: #00ffcc;
-  font-weight: bold;
-}
 
-/* واتساب */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -159,7 +130,13 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* تأثيرات الظهور */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -172,9 +149,8 @@ nav a:hover {
   }
 }
 
-/* توقيت الظهور */
-#slider.fade-in { animation-delay: 0.5s; }
+#banner.fade-in { animation-delay: 0.5s; }
 #about.fade-in { animation-delay: 1s; }
 #services.fade-in { animation-delay: 1.5s; }
 #products.fade-in { animation-delay: 2s; }
-#contact.fade-in { animation-delay: 2
+#contact.fade-in { animation-delay: 2.5s; }
